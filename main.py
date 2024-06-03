@@ -39,4 +39,10 @@ while True:
                         pyautogui.sleep(1)
 
     cv2.imshow('Virtual Mouse',frame)
-    cv2.waitKey(1)
+    # Check if 'q' is pressed to exit the loop
+    if cv2.waitKey(1) & 0xFF == ord('q'):
+        break
+
+# Release the camera and close all OpenCV windows
+cap.release()
+cv2.destroyAllWindows()
